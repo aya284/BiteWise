@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper'
+import AppNavigator from './components/AppNavigator';
+import { useFonts, Quicksand_400Regular, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Quicksand_400Regular,
+    Quicksand_700Bold,
+  });
+  if (!fontsLoaded) {
+    return <ActivityIndicator size="large" color="#4F7B4A" style={styles.loader} />;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <View style={styles.container}>
+          <AppNavigator/>
+      </View>
+      </PaperProvider>  
   );
 }
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    flex: 1, 
+    backgroundColor: '#F5E4C3'
+  }
 });
+
+
