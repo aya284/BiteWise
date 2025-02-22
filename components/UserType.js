@@ -9,9 +9,20 @@ export default function UserType() {
       <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
       <Text style={styles.primaryText}>How will you be {'\n'}using the app ?</Text>
-      <View buttonContainer>
-          <Button mode='contained' style={styles.clientButton}>I'm here for my {'\n'} personal nutrition {'/n'} journey</Button>
-          <Button mode='contained' style={styles.proButton}>I'm a nutrition {'\n'} professional</Button>
+      <View style={styles.buttonUserContainer}>
+          <Button mode='contained' style={styles.clientButton} >
+            <View style={styles.textWrapper}>
+              <Text style={styles.userText}>I'm here for my</Text>
+              <Text style={styles.userText}>personal nutrition</Text>
+              <Text style={styles.userText}>journey</Text>
+            </View>
+          </Button>
+          <Button mode='contained' style={styles.proButton}>
+          <View style={styles.textWrapper}>
+              <Text style={styles.userText}>I'm a nutrition</Text>
+              <Text style={styles.userText}>professional</Text>
+            </View>
+          </Button>
       </View>
       <View style={styles.DivLeafContainer}>
             <Divider style={styles.Divider} />
