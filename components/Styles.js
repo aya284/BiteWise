@@ -138,7 +138,7 @@ clientButton:{
   backgroundColor: '#88A76C',
   alignSelf: 'center',
   shadowColor: '#000',
-  shadowOpacity: 0.2,
+  shadowOpacity: 0.4,
   shadowRadius: pxToDp(10),
   elevation: 10,
   shadowOffset: { width: 0, height: pxToDp(2) },
@@ -152,7 +152,7 @@ proButton:{
   alignSelf: 'center',
   marginVertical: pxToDp(30),
   shadowColor: '#000',
-  shadowOpacity: 0.2,
+  shadowOpacity: 0.4,
   shadowRadius: pxToDp(10),
   elevation: 10,
   shadowOffset: { width: 0, height: pxToDp(2) },
@@ -168,8 +168,8 @@ buttonUserContainer:{
 userText:{
   width: '100%',
   color: '#000', 
-  fontFamily: 'Quicksand_400Regular',
-  fontSize: pxToDp(20),
+  fontFamily: 'Quicksand_700Bold',
+  fontSize: pxToDp(19),
   flexWrap: 'wrap',
   textAlign: 'center'
   

@@ -1,23 +1,37 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Alert } from 'react-native';
 import styles from './Styles';
 import { Button, Divider} from 'react-native-paper';
-
+import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
 export default function UserType() {
+const navigation = useNavigation();
+const [userType, setUserType] = useState (null);
+const handleText = () =>{
+    if (userType === 'Personal'){
+       navigation.navigate('goalScreen');}
+    
+    else if (userType === 'Professional'){
+        navigation.navigate('NutritionForm');}
+    else {
+        Alert.alert('Please select an option first');
+    }
+
+}
   return (
     <View style={styles.container}>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
       <Text style={styles.primaryText}>How will you be {'\n'}using the app ?</Text>
       <View style={styles.buttonUserContainer}>
-          <Button mode='contained' style={styles.clientButton} >
+          <Button mode='contained' style={styles.clientButton} onPress={()=>{setUserType=('Personal')}}>
             <View style={styles.textWrapper}>
               <Text style={styles.userText}>I'm here for my</Text>
               <Text style={styles.userText}>personal nutrition</Text>
               <Text style={styles.userText}>journey</Text>
             </View>
           </Button>
-          <Button mode='contained' style={styles.proButton}>
+          <Button mode='contained' style={styles.proButton} onPress={()=>{setUserType=('Professional')}}>
           <View style={styles.textWrapper}>
               <Text style={styles.userText}>I'm a nutrition</Text>
               <Text style={styles.userText}>professional</Text>
@@ -29,7 +43,7 @@ export default function UserType() {
             <Image source={require('../assets/Images/twoLeafs.png')} style={styles.twoLeafs}/>
       </View>
       <View style={styles.buttonContainer}>
-          <Button mode= 'contained' style={styles.button} labelStyle={styles.textButton} onPress={() => navigation.navigate('goalScreen')}>Next</Button>
+          <Button mode= 'contained' style={styles.button} labelStyle={styles.textButton} onPress={handleText}>Next</Button>  
       </View>
     </View>
   );

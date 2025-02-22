@@ -4,6 +4,7 @@ import LogIn from './LogIn';
 import ResetPassword from './ResetPassword';
 import UserType from './UserType';
 import goalScreen from './goalScreen';
+import NutritionForm from './NutritionForm';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -18,6 +19,7 @@ export default function AppNavigator(){
                 <Stack.Screen name='ResetPassword' component={ResetPassword}/>
                 <Stack.Screen name='UserType' component={UserType}/>
                 <Stack.Screen name='goalScreen' component={goalScreen}/>
+                <Stack.Screen name='nutritionForm' component={NutritionForm}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
