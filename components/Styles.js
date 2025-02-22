@@ -112,7 +112,7 @@ orangeContainer: {
   alignItems: 'center',
   justifyContent: 'center'
 },
-// Leaf + divider
+// Divider
 Divider: {
         width: '80%',
         height: pxToDp(1),
@@ -120,6 +120,7 @@ Divider: {
         alignSelf: 'center',
         
       },
+//leaf + divider
 DivLeafContainer:{
    alignItems: 'center',
    position: 'relative',
@@ -177,7 +178,16 @@ userText:{
 textWrapper:{
   alignItems: 'center',
   justifyContent: 'center',
-}
+},
+//banana
+banana:{
+  width: pxToDp(40),
+  height: pxToDp(40),
+  transform: [{ rotate: '176.64deg' }, {scaleY: -1}],
+  marginLeft: pxToDp(5)
+},
+//goal screen style 
+
 
 });
 export default styles;

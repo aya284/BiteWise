@@ -6,10 +6,11 @@ import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 export default function UserType() {
 const navigation = useNavigation();
-const [userType, setUserType] = useState (null);
+const [userType, setUserType] = useState ('');
 const handleText = () =>{
+  console.log('User Type:', userType); 
     if (userType === 'Personal'){
-       navigation.navigate('goalScreen');}
+       navigation.navigate('GoalScreen');}
     
     else if (userType === 'Professional'){
         navigation.navigate('NutritionForm');}
@@ -24,14 +25,14 @@ const handleText = () =>{
       <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
       <Text style={styles.primaryText}>How will you be {'\n'}using the app ?</Text>
       <View style={styles.buttonUserContainer}>
-          <Button mode='contained' style={styles.clientButton} onPress={()=>{setUserType=('Personal')}}>
+          <Button mode='contained' style={styles.clientButton} onPress={()=>{setUserType('Personal')}}>
             <View style={styles.textWrapper}>
               <Text style={styles.userText}>I'm here for my</Text>
               <Text style={styles.userText}>personal nutrition</Text>
               <Text style={styles.userText}>journey</Text>
             </View>
           </Button>
-          <Button mode='contained' style={styles.proButton} onPress={()=>{setUserType=('Professional')}}>
+          <Button mode='contained' style={styles.proButton} onPress={()=>{setUserType('Professional')}}>
           <View style={styles.textWrapper}>
               <Text style={styles.userText}>I'm a nutrition</Text>
               <Text style={styles.userText}>professional</Text>
