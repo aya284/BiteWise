@@ -1,16 +1,47 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Alert, TouchableOpacity } from 'react-native';
 import styles from './Styles';
-import {useRoute} from '@react-navigation/native'
-export default function GoalScreen() {
+import {useNavigation, useRoute} from '@react-navigation/native';
+import {useState} from 'react';
+import { Button } from 'react-native-paper';
+export default function goalScreen() {
   const route = useRoute();
-  const {userName} = route.params; // getting the past name 
+  const { userName } = route.params || {userName: ''};
+  const navigation = useNavigation();
+  const [selected, setSelected] = useState(null);
+  const handleOptions = (option) =>{
+    setSelected(option);
+  } 
+  const handleSelect = () =>{
+   if (selected){
+    navigation.navigate('SettingProfile', { goal: selected });
+   }
+   else{
+    Alert.alert('Please select an option !')
+   }
+  } 
   return (
     <View style={styles.container}>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
+      <Image source={require('../assets/Images/banana.png')} style = {styles.banana}/>
       <Text style={styles.primaryText}>Hello, {userName} !</Text>
-      <Text style={styles.secondaryText}>what's your main goal?</Text>
+      <Text style={styles.goalText}>what's your main goal?</Text>
+      <View style={styles.optionsContainer}> {['Losing Weight', 'Maintaining Weight', 'Gaining Weight'].map((option) => (
+        <TouchableOpacity key={option} style={[
+          styles.optionButton,
+          selected === option && styles.selected, 
+        ]} onPress={()=>handleOptions(option)}>
+          <Text style={styles.optionText}>{option}</Text>
+        </TouchableOpacity>
+      ))}
+      <View style={styles.buttonContainer}>
+            <Button mode= 'contained' style={styles.button} labelStyle={styles.textButton} onPress={() => {
+              handleSelect(); 
+             } }>Next</Button>
+      </View>
+        
+     </View>
     </View>
   );
 }

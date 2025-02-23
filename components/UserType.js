@@ -4,16 +4,19 @@ import styles from './Styles';
 import { Button, Divider} from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
+import { useRoute } from '@react-navigation/native';
 export default function UserType() {
 const navigation = useNavigation();
 const [userType, setUserType] = useState ('');
+const route = useRoute();
+const { userName } = route.params || { userName: '' };
 const handleText = () =>{
   console.log('User Type:', userType); 
     if (userType === 'Personal'){
-       navigation.navigate('GoalScreen');}
+       navigation.navigate('goalScreen', {userName});}
     
     else if (userType === 'Professional'){
-        navigation.navigate('NutritionForm');}
+        navigation.navigate('NutritionForm', {userName});}
     else {
         Alert.alert('Please select an option first');
     }

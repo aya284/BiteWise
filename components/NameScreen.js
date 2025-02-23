@@ -9,7 +9,7 @@ export default function LogIn() {
   const [name, setName] = useState('');
   const handleNext = () =>{
     if (name.trim()) {
-       navigation.navigate('GoalScreen', {userName: name.trim()}); //passing the name 
+       navigation.navigate('UserType', {userName: name.trim()}); //passing the name 
     }
     else {
       Alert.alert('Please enter your name !')
@@ -25,7 +25,7 @@ export default function LogIn() {
           <Image style={styles.orange} source={require('../assets/Images/orangeExtraction.png')}/>
       </View>
       <Text style={styles.secondaryText}>What is your first name ?</Text>
-      <TextInput style={styles.input} placeholder='First Name' keyboardType= 'name-phone-pad' autoCapitalize="words" onChange={setName}
+      <TextInput style={styles.input} placeholder='First Name' keyboardType= 'name-phone-pad' autoCapitalize="words" onChangeText={(text) => setName(text)}
  />
       <Text style={styles.secondaryText}>What is your last name ?</Text>
       <TextInput style={styles.input} placeholder='Last Name' keyboardType= 'name-phone-pad' autoCapitalize="words"
@@ -33,7 +33,7 @@ export default function LogIn() {
         <View style={styles.buttonContainer}>
             <Button mode= 'contained' style={styles.button} labelStyle={styles.textButton} onPress={() => {
               handleNext(); //save the state 
-              navigation.navigate('UserType') } }>Next</Button>
+             } }>Next</Button>
         </View>
 
     </View>

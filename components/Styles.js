@@ -184,9 +184,52 @@ banana:{
   width: pxToDp(40),
   height: pxToDp(40),
   transform: [{ rotate: '176.64deg' }, {scaleY: -1}],
-  marginLeft: pxToDp(5)
+  
 },
 //goal screen style 
+optionsContainer: {
+  width: '100%',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: pxToDp(40)
+},
+
+optionButton: {
+  width: '80%',
+  paddingVertical: pxToDp(15),
+  backgroundColor: '#FFFF',
+  borderRadius: pxToDp(15),
+  alignItems: 'center',
+  shadowColor: '#000',
+  shadowOpacity: 0.2,
+  shadowRadius: pxToDp(5),
+  elevation: 5,
+},
+
+selected: {
+  backgroundColor: '#88A76C', 
+},
+
+optionText: {
+  fontSize: pxToDp(18),
+  fontFamily: 'Quicksand_400Regular',
+  color: '#000',
+},
+goalText:{
+  
+    width: '100%',
+    color: '#000',
+    textAlign: 'center',
+    fontFamily: 'Quicksand_700Bold',
+    fontSize: pxToDp(20),
+    marginVertical: pxToDp(30),
+    alignItems: 'center',
+    justifyContent: 'center',
+    top: pxToDp(250),
+    position: 'absolute'
+   
+
+  },
 
 
 });
