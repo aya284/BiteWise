@@ -187,6 +187,7 @@ banana:{
   
 },
 //goal screen style 
+// option buttons
 optionsContainer: {
   width: '100%',
   alignItems: 'center',
@@ -216,21 +217,45 @@ optionText: {
   color: '#000',
 },
 goalText:{
-  
-    width: '100%',
-    color: '#000',
-    textAlign: 'center',
-    fontFamily: 'Quicksand_700Bold',
-    fontSize: pxToDp(20),
-    marginVertical: pxToDp(30),
-    alignItems: 'center',
-    justifyContent: 'center',
-    top: pxToDp(250),
-    position: 'absolute'
-   
-
-  },
-
-
+  width: pxToDp(350),
+  height: pxToDp(80),
+  color: '#000',
+  textAlign: 'center', 
+  fontFamily: 'Quicksand_700Bold',
+  fontSize: pxToDp(20),
+  alignItems: 'center',
+  justifyContent: 'center'
+},
+helloText:{
+  width: '100%',
+  height: pxToDp(100),
+  color: '#000',
+  textAlign: 'center', 
+  fontFamily: 'Quicksand_700Bold',
+  fontSize: pxToDp(40),
+  marginVertical: pxToDp(30),
+  alignItems: 'center',
+  justifyContent: 'center'
+},
+//Setting Profile screen 
+genderContainer: {
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'row',
+  gap: pxToDp(15)},
+genderButton: {
+  width: '30%',
+  paddingVertical: pxToDp(15),
+  backgroundColor: '#FFFF',
+  borderRadius: pxToDp(15),
+  alignItems: 'center',
+  shadowColor: '#000',
+  shadowOpacity: 0.2,
+  shadowRadius: pxToDp(5),
+  elevation: 5,
+},
+customGender:{
+  marginVertical: pxToDp(15),
+}
 });
 export default styles;

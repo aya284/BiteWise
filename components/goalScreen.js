@@ -25,7 +25,7 @@ export default function goalScreen() {
       <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
       <Image source={require('../assets/Images/banana.png')} style = {styles.banana}/>
-      <Text style={styles.primaryText}>Hello, {userName} !</Text>
+      <Text style={styles.helloText}>Hello, {userName} !</Text>
       <Text style={styles.goalText}>what's your main goal?</Text>
       <View style={styles.optionsContainer}> {['Losing Weight', 'Maintaining Weight', 'Gaining Weight'].map((option) => (
         <TouchableOpacity key={option} style={[
