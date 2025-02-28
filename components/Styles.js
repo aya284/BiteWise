@@ -31,6 +31,32 @@ secondaryText:{
   fontSize: pxToDp(18),
   marginBottom: pxToDp(10),
 },
+// leaf container if i have a scrollable view
+leafContainer:{
+  flex: 1,
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
+
+},
+topScrollLeaf:{
+  width: 200,
+  height: 200,
+  transform: [{ rotate: '91.171deg' }],
+  top: -10,
+  left: -25,
+  position: 'absolute',
+  resizeMode: 'contain'
+},
+bottomScrollLeaf:{
+  width: 200,
+  height: 200,
+  transform: [{ rotate: '91.171deg' }, {scaleY: -1}, {scaleX: -1}],
+  bottom: 0,
+  right: -1,
+  position: 'absolute',
+  resizeMode: 'contain'
+},
 // needed Leaf for general layout
 topLeaf:{
   width: 200,
@@ -50,6 +76,7 @@ bottomLeaf:{
   position: 'absolute',
   resizeMode: 'contain'
 },
+
 // user input
 input:{
   width: '100%',
@@ -199,7 +226,7 @@ optionButton: {
   width: '80%',
   paddingVertical: pxToDp(15),
   backgroundColor: '#FFFF',
-  borderRadius: pxToDp(15),
+  borderRadius: pxToDp(20),
   alignItems: 'center',
   shadowColor: '#000',
   shadowOpacity: 0.2,
@@ -256,6 +283,162 @@ genderButton: {
 },
 customGender:{
   marginVertical: pxToDp(15),
-}
-});
+},
+SwitchContainer:{
+  flexDirection: 'row',
+  justifyContent: 'center',
+  marginVertical: pxToDp(15),
+  overflow: 'hidden',
+  backgroundColor: '#F5E4C3',
+  height: pxToDp(47),
+ 
+},
+switchActiveButton:{
+
+  justifyContent: "center",
+  borderWidth:1,
+  borderColor: '#4A4459',
+  width: '30%',
+  paddingVertical: pxToDp(15),
+  alignItems: 'center',
+  borderTopLeftRadius: pxToDp(25),
+  borderBottomLeftRadius: pxToDp(25),
+},
+switchInactiveButton:{
+ 
+  justifyContent: "center",
+  borderWidth: 1,
+  borderColor: '#4A4459',
+  width: '30%',
+  paddingVertical: pxToDp(15),
+  alignItems: 'center',
+
+  borderTopRightRadius: pxToDp(25),
+  borderBottomRightRadius: pxToDp(25),
+},
+selectedUnit:{
+  backgroundColor: '#2E4A32',
+},
+optionUnitText: {
+  fontSize: pxToDp(12),
+  fontFamily: 'Quicksand_600SemiBold',
+  color: '#000',
+  textAlign: 'center',
+  includeFontPadding: false,
+},
+//scrolable rule 
+
+  rulerContainer: {
+    alignItems: "center",
+    backgroundColor: "#F5E4C3",
+    paddingTop: 50,
+    position: "relative",
+  },
+  selectedValue: {
+    fontSize: 32, 
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  rulerItem: {
+    width: 25, //  Increased width for better spacing
+    alignItems: "center",
+    justifyContent: "flex-end", //  Ensures numbers align properly
+  },
+  rulerText: {
+    fontSize: 14,
+    color: "#555",
+    marginBottom: 5, //  Creates space between text & tick marks
+  },
+  line: {
+    width: 2,
+    height: 15,
+    backgroundColor: "#ccc",
+  },
+  activeLine: {
+    height: 30, //  Taller line for selected value
+    backgroundColor: "black",
+  },
+  centerIndicator: {
+  position: "absolute",
+  left: "50%",
+  width: 3, //  Slightly thicker for better visibility
+  height: 55, //  Increased height to align properly
+  backgroundColor: "black",
+  transform: [{ translateX: -1.5 }], //  Moves it perfectly to the center
+  bottom: -3,
+},
+//Motivational Screen
+// cute apple 
+cuteApple:
+{width: pxToDp(170  ),
+  height: pxToDp(160),
+  justifyContent: 'center',
+  alignItems: 'center',
+  resizeMode: 'contain',
+  marginVertical: pxToDp(18),
+},
+greenText:{
+  color: '#4F7B4A',
+  marginVertical: pxToDp(60),
+  fontWeight: 'Quicksand_700Bold',
+},
+motivText:{
+fontSize: pxToDp(35),
+},
+// transformationScreen 
+optionsTransformationContainer: {
+  width: '100%',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: pxToDp(15)},
+optionTransformationText: {
+    fontSize: pxToDp(16),
+    fontFamily: 'Quicksand_500Medium',
+    color: '#000',
+    textAlign: 'center',
+  },
+  transformationText:{
+    width: pxToDp(350),
+    height: pxToDp(150),
+    color: '#000',
+    textAlign: 'center', 
+    fontFamily: 'Quicksand_700Bold',
+    fontSize: pxToDp(35),
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  //TransformationScreen Popup 
+  popup:{
+    borderRadius: pxToDp(20),
+    width: '100%',
+    height: '50%',
+    backgroundColor: '#88A76C',
+    justifyContent: 'center',
+    alignItems: 'center',
+   },
+  smallPear:{
+    height: pxToDp(100),
+    width: pxToDp(100),
+    resizeMode: 'contain',
+    marginVertical: pxToDp(20),
+  },
+  mainText:{
+    textAlign: 'center',
+    color: 'white',
+    fontFamily: 'Quicksand_700Bold',
+    fontSize: pxToDp(25),
+    marginVertical: pxToDp(20),
+  },
+  popupSubText:{
+      textAlign: 'center',
+      color: 'white',
+      fontFamily: 'Quicksand_500Meduim',
+      fontSize: pxToDp(18),
+      marginVertical: pxToDp(20),
+  },
+  popupContainer:{
+    flex: 1,
+    justifyContent: 'flex-end',
+  }
+})
 export default styles;

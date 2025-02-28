@@ -6,8 +6,15 @@ import UserType from './UserType';
 import goalScreen from './goalScreen';
 import NutritionForm from './NutritionForm';
 import SettingProfile from './SettingProfile';
+import MotivationalScreen from './MotivationalScreen';
+import TransformationScreen from './TransformationScreen';
+import DietaryPreferences from './dietaryPreferences';
+import ActivityLevel from './ActivityLevel';
+import Gratitude from './Gratitude';
+
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+
 
 const Stack = createStackNavigator();
 export default function AppNavigator(){
@@ -22,6 +29,11 @@ export default function AppNavigator(){
                 <Stack.Screen name='goalScreen' component={goalScreen}/>
                 <Stack.Screen name= 'SettingProfile' component={SettingProfile}/>
                 <Stack.Screen name='nutritionForm' component={NutritionForm}/>
+                <Stack.Screen name='MotivationalScreen' component={MotivationalScreen}/>
+                <Stack.Screen name='TransformationScreen' component={TransformationScreen}/>
+                <Stack.Screen name='DietaryPreferences' component={DietaryPreferences}/>
+                <Stack.Screen name='ActivityLevel' component={ActivityLevel}/>
+                <Stack.Screen name='Gratitude' component={Gratitude}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
