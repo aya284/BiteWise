@@ -4,8 +4,10 @@ import { useNavigation } from '@react-navigation/native';
 import {Button} from 'react-native-paper';
 import styles from './Styles';
 import {useState} from 'react';
+import {Ionicons} from '@expo/vector-icons';
 const BottomPopup = ({visible}) =>{
   return (
+    
      <Modal animationType ='slide' transparent={true} visible={visible} >
       <View style={styles.popupContainer}>
         <TouchableOpacity style={styles.popup}>
@@ -42,6 +44,11 @@ export default function TransformationScreen() {
     
   return (
     <View style = {styles.container}>
+      <View>
+         <TouchableOpacity onPress={() => navigation.goBack() } style={styles.backButton}>
+           <Ionicons name="arrow-back" size={38}/>
+         </TouchableOpacity>
+     </View>
        <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
        <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
       <Text style={ styles.transformationText}>What's driving your transformation?</Text>

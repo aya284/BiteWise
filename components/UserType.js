@@ -1,22 +1,20 @@
 import React from 'react';
-import { View, Text, Image, Alert } from 'react-native';
+import { View, Text, Image, Alert, TouchableOpacity } from 'react-native';
 import styles from './Styles';
 import { Button, Divider} from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
-import { useRoute } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons'; 
 export default function UserType() {
 const navigation = useNavigation();
 const [userType, setUserType] = useState ('');
-const route = useRoute();
-const { userName } = route.params || { userName: '' };
 const handleText = () =>{
   console.log('User Type:', userType); 
     if (userType === 'Personal'){
-       navigation.navigate('goalScreen', {userName});}
+       navigation.navigate('NameScreen', {userType: userType});}
     
     else if (userType === 'Professional'){
-        navigation.navigate('NutritionForm', {userName});}
+        navigation.navigate('NameScreen', {userType: userType});}
     else {
         Alert.alert('Please select an option first');
     }
@@ -24,6 +22,11 @@ const handleText = () =>{
 }
   return (
     <View style={styles.container}>
+      <View>
+      <TouchableOpacity onPress={() => navigation.goBack() } style={styles.backButton}>
+        <Ionicons name="arrow-back" size={38}/>
+      </TouchableOpacity>
+    </View>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
       <Text style={styles.primaryText}>How will you be {'\n'}using the app ?</Text>

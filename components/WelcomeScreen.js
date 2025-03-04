@@ -1,9 +1,7 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet ,PixelRatio, Dimensions, Pressable } from "react-native";
-import {Divider, Button} from 'react-native-paper';
+import { Text, View, Image, StyleSheet , Dimensions} from "react-native";
+import { Button} from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
-import LogIn from './LogIn';
-import NameScreen from './NameScreen';
 export default function WelcomeScreen (){
     const navigation = useNavigation();
 return(
@@ -11,26 +9,23 @@ return(
   <View style={styles.logoContainer}>
      <View style={styles.circle}>
         <Image source={require('../assets/Images/logo.png')} style={styles.logo}/>
+        
      </View>
    </View>
     <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
+    <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
     <View style={styles.textContainer}>
        <Text style={styles.appNameText}>BiteWise</Text>
        <Text style={styles.subNameText}>Your Smart Guide to Healthy {'\n'} Eating</Text>
     </View>
     <View style={styles.buttonContainer}>
-           <Button mode='contained' style={styles.firstButton} labelStyle={styles.buttonText} onPress={() => navigation.navigate(NameScreen)}>Get Started</Button>
+           <Button mode='contained' style={styles.firstButton} labelStyle={styles.buttonText} onPress={() => navigation.navigate('LogIn')}>Get Started</Button>
     </View>
-    <View style={styles.dividerContainer}>
-         <Divider style={styles.divider}/>
+    <View style={styles.buttonContainer}>
+           <Button mode='contained' style={styles.secondButton} labelStyle={styles.buttonText} onPress={() => navigation.navigate('UserType')}>Sign up</Button>
     </View>
-    <View style={styles.footerContainer}>
-          <View style={styles.accountContainer}>
-             <Image source={require('../assets/Images/banana.png')} style={styles.banana}/>
-             <Text style={styles.accountText}>already have an account ?</Text>
-             <Button mode='contained'  style={styles.logInButton} labelStyle= {styles.logInText}  onPress={() => navigation.navigate(LogIn)}>Log In</Button>
-          </View>
-    </View>
+    
+    
 </View>);}
 const { width } = Dimensions.get("window");
 const pxToDp = (px) => px * (width / 390);
@@ -43,20 +38,6 @@ const styles = StyleSheet.create ({
        paddingVertical: pxToDp(40),
        
     },
-    accountContainer: {
-        flexDirection: 'row',  
-        alignItems: 'center', 
-        justifyContent: 'center',  
-        marginBottom: pxToDp(25),
-        width: '100%',
-        paddingHorizontal: pxToDp(15)
-     },
-    footerContainer:{
-        width: '100%',
-        alignItems: 'center',
-        bottom: pxToDp(20),
-        position: 'absolute'
-     },
     logoContainer: {
             marginTop: pxToDp(50),
             alignItems: 'center'
@@ -128,8 +109,7 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         justifyContent: 'center',
         alignSelf: 'center',
-        marginBottom: pxToDp(80),
-        marginTop: pxToDp(40),
+        marginVertical: pxToDp(5),
         shadowColor: '#000',
         shadowOpacity: 0.2,
         shadowRadius: pxToDp(10),
@@ -141,59 +121,6 @@ const styles = StyleSheet.create ({
         fontFamily: 'Quicksand_700Bold',
         fontSize: 21
         },
-    dividerContainer:{
-        flexGrow: 1,  
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'flex-end',  
-        marginVertical: pxToDp(4), 
-        paddingBottom: pxToDp(90)
-    },    
-    divider: {
-        width: '80%',
-        height: pxToDp(1),
-        backgroundColor: '#000',
-        
-    },
-
-    accountText:{
-        color: '#4F7B4A',
-        textAlign: 'center',
-        fontFamily: 'Quicksand_700Bold',
-        fontSize: pxToDp(14),
-        marginRight: pxToDp(5)
-        
-    },
-
-    logInButton:{
-        width: pxToDp(100),
-        height: pxToDp(40),
-        borderRadius: pxToDp(10),
-        backgroundColor: '#FFF',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingHorizontal: pxToDp(10),
-        shadowColor: '#000',
-        shadowOpacity: 0.2,
-        shadowRadius: pxToDp(10),
-        elevation: 10,
-        shadowOffset: { width: 0, height: pxToDp(2) }
-    },    
-    logInText:{
-        color: '#2E4A32',
-        fontFamily: 'Quicksand_700Bold',
-        fontSize: 15,
-        flexShrink: 1,
-        textAlign: 'center',
-        width: pxToDp(95)
-
-    },
-    banana:{
-        width: pxToDp(40),
-        height: pxToDp(40),
-        transform: [{ rotate: '176.64deg' }, {scaleY: -1}],
-        marginLeft: pxToDp(5)
-    },
 
     topLeaf:{
         width: 200,
@@ -203,9 +130,32 @@ const styles = StyleSheet.create ({
         left: -14,
         position: 'absolute',
         resizeMode: 'contain'
-    }
+    },
         
-
+    secondButton :{
+        width: pxToDp(280),
+        height: pxToDp(60),
+        borderRadius: pxToDp(20),
+        backgroundColor: '#88A76C',
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
+       marginVertical: pxToDp(10),
+        shadowColor: '#000',
+        shadowOpacity: 0.2,
+        shadowRadius: pxToDp(10),
+        elevation: 10,
+        shadowOffset: { width: 0, height: pxToDp(2) }
+    },
+    bottomLeaf:{
+        width: 200,
+        height: 200,
+        transform: [{ rotate: '91.171deg' }, {scaleY: -1}, {scaleX: -1}],
+        bottom: -3,
+        right: -14,
+        position: 'absolute',
+        resizeMode: 'contain'
+    }
 
 
 

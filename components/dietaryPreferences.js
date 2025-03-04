@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity, Alert } from 'react-native';
 import styles from './Styles';
 import { useState} from 'react';
 import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
 export default function DietaryPreferences() {
 const navigation = useNavigation();
   const [selected, setSelected] = useState(null);
@@ -20,9 +21,14 @@ const navigation = useNavigation();
   }
   return (
     <View style= {styles.container}>
+      <View>
+      <TouchableOpacity onPress={() => navigation.goBack() } style={styles.backButton}>
+        <Ionicons name="arrow-back" size={38}/>
+      </TouchableOpacity>
+     </View>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
-      <Text style={styles.transformationText}>Do you have any dietary prefernces or resrictions ? </Text>
+      <Text style={styles.dietaryText}>Do you have any dietary prefernces or resrictions ? </Text>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.optionsContainer}> {['Vegan 🌱', 'Vegetarian 🥕', 'Pescatarian 🐟', 'Gluten-Free 🌾', 'Lactose Intolerant 🥛', 'Low-Soduim Diet 🧂', 'Seafood or Shellfish Allergy 🦐', 'Diabetic-Friendly Diet 🍬','No Restrictions ✅',' Other ✏️'].map((option) => (
           <TouchableOpacity key={option} style={[

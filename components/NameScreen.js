@@ -1,23 +1,34 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, Image, Dimensions, Alert } from 'react-native';
+import { View, Text, StyleSheet, TextInput, Image, Dimensions, Alert, TouchableOpacity } from 'react-native';
 import styles, { pxToDp } from './Styles';
 import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import {useState} from 'react';
-export default function LogIn() {
+import { useRoute } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
+export default function NameScreen() {
+  const route = useRoute ();
   const navigation = useNavigation();
   const [name, setName] = useState('');
+  const {userType} = route.params;
   const handleNext = () =>{
-    if (name.trim()) {
-       navigation.navigate('UserType', {userName: name.trim()}); //passing the name 
-    }
+    if (name.trim() && userType === 'Personal'){
+      navigation.navigate('goalScreen', {userName: name.trim()}); 
+    } else if (name.trim() && userType === 'Professional'){
+      navigation.navigate('NutritionForm', {userName: name.trim()}); }
     else {
-      Alert.alert('Please enter your name !')
+      Alert.alert('Please enter your name');
+      
     }
       
   }
   return (
     <View style={styles.container}>
+      <View>
+         <TouchableOpacity onPress={() => navigation.goBack() } style={styles.backButton}>
+           <Ionicons name="arrow-back" size={38}/>
+         </TouchableOpacity>
+      </View>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
       <Text style={styles.primaryText}>Welcome to {'\n'}BiteWise</Text>

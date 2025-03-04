@@ -4,6 +4,7 @@ import styles from './Styles';
 import { useState} from 'react';
 import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
 export default function ActivityLevel() {
 const navigation = useNavigation();
   const [selected, setSelected] = useState(null);
@@ -18,9 +19,14 @@ const navigation = useNavigation();
   }
   return (
     <View style= {styles.container}>
+      <View>
+      <TouchableOpacity onPress={() => navigation.goBack() } style={styles.backButton}>
+        <Ionicons name="arrow-back" size={38}/>
+      </TouchableOpacity>
+     </View>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
-      <Text style={styles.transformationText}>How active are you in  your daily life ? </Text>
+      <Text style={styles.dietaryText}>How active are you in  your daily life ? </Text>
 
         <View style={styles.optionsContainer}> {['Mostly Sitting 🪑', ' Lightly Active 🚶', 'Active Lifestyle 🚴', 'Highly Active 💪'].map((option) => (
           <TouchableOpacity key={option} style={[

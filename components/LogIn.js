@@ -40,7 +40,7 @@ return (
         </Pressable>
         <Divider style={styles.Divider}/>
         <View style={styles.buttonContainer}>
-             <Button mode= 'contained' style={styles.button} labelStyle={styles.textButton}>Log In</Button>
+             <Button mode= 'contained' style={styles.button} labelStyle={styles.textButton} onPress={()=> navigation.navigate('Home')}>Log In</Button>
         </View>
         <View style={styles.textContainer}>
             <Text style={styles.accountText}>Don't you have an account?</Text>

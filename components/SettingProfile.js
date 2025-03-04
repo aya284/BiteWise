@@ -4,7 +4,7 @@ import styles from './Styles';
 import {useState} from 'react';
 import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
-
+import { Ionicons } from '@expo/vector-icons';
 
 export default function SettingProfile() {
   const navigation = useNavigation();
@@ -22,7 +22,11 @@ export default function SettingProfile() {
 
   return (
     <View style={styles.container}>
-        
+      <View>
+      <TouchableOpacity onPress={() => navigation.goBack() } style={styles.backButton}>
+        <Ionicons name="arrow-back" size={38}/>
+      </TouchableOpacity>
+     </View>
       <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.leafContainer}>
           <Image source={require('../assets/Images/leaf.png')} style= {styles.topScrollLeaf}/>

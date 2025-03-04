@@ -4,6 +4,7 @@ import styles from './Styles';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {useState} from 'react';
 import { Button } from 'react-native-paper';
+import { Ionicons } from '@expo/vector-icons';
 export default function goalScreen() {
   const route = useRoute();
   const { userName } = route.params || {userName: ''};
@@ -22,6 +23,11 @@ export default function goalScreen() {
   } 
   return (
     <View style={styles.container}>
+      <View>
+      <TouchableOpacity onPress={() => navigation.goBack() } style={styles.backButton}>
+        <Ionicons name="arrow-back" size={38}/>
+      </TouchableOpacity>
+     </View>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
       <Image source={require('../assets/Images/leaf.png')} style= {styles.bottomLeaf}/>
       <Image source={require('../assets/Images/banana.png')} style = {styles.banana}/>

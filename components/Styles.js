@@ -11,6 +11,13 @@ container: {
     justifyContent: 'center',
     alignItems: 'center'
   },
+// arrow back
+backButton:{
+ position: 'absolute',
+ left: pxToDp(-180),
+marginBottom: pxToDp(20),
+zIndex: 100,
+},
 // general text
 primaryText:{
     width: pxToDp(350),
@@ -399,11 +406,11 @@ optionTransformationText: {
   },
   transformationText:{
     width: pxToDp(350),
-    height: pxToDp(150),
+    height: pxToDp(140),
     color: '#000',
     textAlign: 'center', 
     fontFamily: 'Quicksand_700Bold',
-    fontSize: pxToDp(35),
+    fontSize: pxToDp(30),
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -420,7 +427,7 @@ optionTransformationText: {
     height: pxToDp(100),
     width: pxToDp(100),
     resizeMode: 'contain',
-    marginVertical: pxToDp(20),
+    marginVertical: pxToDp(25),
   },
   mainText:{
     textAlign: 'center',
@@ -439,6 +446,140 @@ optionTransformationText: {
   popupContainer:{
     flex: 1,
     justifyContent: 'flex-end',
-  }
+  },
+  //gratitude screen
+  GratitudeText:{
+    textAlign: 'center',
+    color: '#000000',
+    fontFamily: 'Quicksand_700Bold',
+    fontSize: pxToDp(35),
+    marginVertical: pxToDp(20),
+  },
+  GratitudeSubText:{
+    textAlign: 'center',
+    color: '#4F7B4A',
+    fontFamily: 'Quicksand_600SemiBold',
+    fontSize: pxToDp(30),
+    marginVertical: pxToDp(20),
+  },
+  // signUp
+  SignUpText:{
+    textAlign: 'center',
+    color: '#000000',
+    fontFamily: 'Quicksand_600SemiBold',
+    fontSize: pxToDp(25),
+    marginVertical: pxToDp(10),
+  },
+  passwordContainer: {
+          flexDirection: 'row',
+          marginBottom: 15,
+          alignItems: 'center',
+          width: '100%',
+          backgroundColor: '#fff',
+          borderRadius: 15,
+          borderWidth: 1,
+          borderColor: '#ccc',
+          height: 50,
+          shadowColor: '#000',
+          shadowOpacity: 0.2,
+          shadowRadius: pxToDp(10),
+          elevation: 10,
+          shadowOffset: { width: 0, height: pxToDp(2) }
+        },
+        passwordInput: {
+          flex: 1,
+          height: '100%',
+          paddingLeft: 15,
+          fontSize: 16,
+          
+        },
+        eyeIcon: {
+          padding: 10,
+          marginRight: 10,
+        },
+        reset: {
+          color: '#4F7B4A', 
+          fontFamily: 'Quicksand_700Bold',
+          fontSize: pxToDp(15),
+          textDecorationLine: 'underline'
+  
+        },
+        Divider: {
+          width: '80%',
+          height: pxToDp(1),
+          backgroundColor: '#000',
+          alignSelf: 'center',
+          marginVertical: pxToDp(20)
+        },
+  fruit:{
+  width: '70%',
+  height: pxToDp(160),
+  justifyContent: 'center',
+  alignItems: 'center',
+  resizeMode: 'contain',
+  marginVertical: pxToDp(10),
+  },
+  //dietary
+  dietaryText:{
+    width: pxToDp(350),
+    height: pxToDp(140),
+    color: '#000',
+    textAlign: 'center', 
+    fontFamily: 'Quicksand_700Bold',
+    fontSize: pxToDp(30),
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: pxToDp(45),
+  },
+  //main container 
+  mainContainer: {
+    flex: 1,
+    backgroundColor: '#F5E4C3',
+  
+  },
+  // header component
+  header:{
+    width: '100%',
+    backgroundColor: '#88A76C',
+    paddingVertical: pxToDp(20),
+    paddingHorizontal: pxToDp(12),
+   
+  },
+  topRow:{
+    flexDirection: 'row',
+    alignItems: "center",
+    width: '100%',
+    justifyContent: 'space-between',
+  },
+  appName:{
+    color: '#000',
+    textAlign: 'center', 
+    fontFamily: 'Quicksand_700Bold',
+    fontSize: pxToDp(30),
+    
+  },
+  headerLogo:{
+    width: pxToDp(50),
+    height: pxToDp(50),
+    resizeMode: 'contain',
+    marginVertical: pxToDp(10),
+    marginRight: pxToDp(10),
+  },
+  //tabNavigation
+  tabNavigation:{
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#88A76C',
+    alignItems: 'center',
+    position: 'absolute',
+    width: '100%',
+    bottom: 0,
+    height: pxToDp(60),
+  },
+ bot:{
+  width: pxToDp(25),
+  height: pxToDp(25),
+  resizeMode: 'contain',
+ }
 })
 export default styles;

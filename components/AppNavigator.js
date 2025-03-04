@@ -11,7 +11,14 @@ import TransformationScreen from './TransformationScreen';
 import DietaryPreferences from './dietaryPreferences';
 import ActivityLevel from './ActivityLevel';
 import Gratitude from './Gratitude';
-
+import SignUp from './SignUp';
+import Home from './Home';
+import Chatbot from './chatbot';
+import Profile from './Profile';
+import Recipes from './recipes';
+import Notifications from './Notifications';
+import Settings from './Settings';
+import NutritionSection from './NutritionSection';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -28,12 +35,20 @@ export default function AppNavigator(){
                 <Stack.Screen name='UserType' component={UserType}/>
                 <Stack.Screen name='goalScreen' component={goalScreen}/>
                 <Stack.Screen name= 'SettingProfile' component={SettingProfile}/>
-                <Stack.Screen name='nutritionForm' component={NutritionForm}/>
+                <Stack.Screen name='NutritionForm' component={NutritionForm}/>
                 <Stack.Screen name='MotivationalScreen' component={MotivationalScreen}/>
                 <Stack.Screen name='TransformationScreen' component={TransformationScreen}/>
                 <Stack.Screen name='DietaryPreferences' component={DietaryPreferences}/>
                 <Stack.Screen name='ActivityLevel' component={ActivityLevel}/>
                 <Stack.Screen name='Gratitude' component={Gratitude}/>
+                <Stack.Screen name='SignUp' component={SignUp}/>
+                <Stack.Screen name='Home' component={Home}/>
+                <Stack.Screen name='Chatbot' component={Chatbot}/>
+                <Stack.Screen name='Profile' component={Profile}/>
+                <Stack.Screen name='Recipes' component={Recipes}/>
+                <Stack.Screen name='NutritionSection' component={NutritionSection}/>
+                <Stack.Screen name='Notifications' component={Notifications}/>
+                <Stack.Screen name='Settings' component={Settings}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
