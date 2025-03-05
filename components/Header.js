@@ -25,7 +25,7 @@ export default function Header({subtitle}) {
         <TouchableOpacity onPress={() => navigation.goBack() }>
              <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
-        <Text style={styles.secondaryText}>{subtitle}</Text>
+        <Text style={styles.subText}>{subtitle}</Text>
         
     </View>
     

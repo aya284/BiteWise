@@ -541,8 +541,9 @@ optionTransformationText: {
   header:{
     width: '100%',
     backgroundColor: '#88A76C',
-    paddingVertical: pxToDp(20),
-    paddingHorizontal: pxToDp(12),
+    paddingTop: pxToDp(35),
+    paddingHorizontal: pxToDp(16),
+    justifyContent: 'center',
    
   },
   topRow:{
@@ -555,14 +556,21 @@ optionTransformationText: {
     color: '#000',
     textAlign: 'center', 
     fontFamily: 'Quicksand_700Bold',
-    fontSize: pxToDp(30),
+    fontSize: pxToDp(40),
+    
+  },
+  subText:{
+    color: '#000',
+    textAlign: 'center', 
+    fontFamily: 'Quicksand_500Medium',
+    fontSize: pxToDp(18),
+    marginBottom: pxToDp(10),	
     
   },
   headerLogo:{
-    width: pxToDp(50),
-    height: pxToDp(50),
+    width: pxToDp(60),
+    height: pxToDp(60),
     resizeMode: 'contain',
-    marginVertical: pxToDp(10),
     marginRight: pxToDp(10),
   },
   //tabNavigation
@@ -575,11 +583,81 @@ optionTransformationText: {
     width: '100%',
     bottom: 0,
     height: pxToDp(60),
+    zIndex: 100,
   },
  bot:{
   width: pxToDp(25),
   height: pxToDp(25),
   resizeMode: 'contain',
- }
+ },
+ //chart container 
+ chartContainer:{
+  backgroundColor: '#FCCF94',
+  borderRadius: pxToDp(20),
+  justifyContent: 'center',
+  marginVertical: pxToDp(20),
+  marginHorizontal: pxToDp(20),
+  width: '95%',
+ },
+ caloriesText:{
+  color: '#000',
+  textAlign: 'left', 
+  fontFamily: 'Quicksand_600SemiBold',
+  fontSize: pxToDp(18),
+  paddingLeft: pxToDp(10),},
+ caloriesSubText:{
+  color: '#2E4A32',
+  textAlign: 'left', 
+  fontFamily: 'Quicksand_400Regular',
+  fontSize: pxToDp(14),
+  paddingLeft: pxToDp(10),
+ },
+ goalText:{
+  color: '#2E4A32',
+  textAlign: 'left', 
+  fontFamily: 'Quicksand_600SemiBold',
+  fontSize: pxToDp(13),
+  marginVertical: pxToDp(10),
+ },
+ goalSubText:{
+  color: '#000',
+  textAlign: 'left', 
+  fontFamily: 'Quicksand_600SemiBold',
+  fontSize: pxToDp(13),
+  marginVertical: pxToDp(10),
+ },
+ //Home component
+ buttonHomeContainer:{
+  flexDirection: 'column',
+  justifyContent: 'center',
+  gap: pxToDp(10),
+  width: '95%',
+ },
+ homeButton:{
+  justifyContent: 'center',
+  backgroundColor: '#FCCF94',
+  borderRadius: pxToDp(20),
+  height: pxToDp(55),
+ },
+ buttonHomeText:{
+  color: '#2E4A32',
+  fontFamily: 'Quicksand_700Bold',
+  fontSize: pxToDp(15),
+  textAlign: 'left',
+  paddingHorizontal: pxToDp(18),
+ }, 
+ addIcon:{
+  marginRight: pxToDp(18),
+
+},
+sportyPear:{
+  width: pxToDp(50),
+  height: pxToDp(50),
+  resizeMode: 'contain',
+  marginHorizontal: pxToDp(10),
+  
+}
+
+
 })
 export default styles;

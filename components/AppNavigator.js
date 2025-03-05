@@ -13,14 +13,16 @@ import ActivityLevel from './ActivityLevel';
 import Gratitude from './Gratitude';
 import SignUp from './SignUp';
 import Home from './Home';
-import Chatbot from './chatbot';
+import Chatbot from './Chatbot';
 import Profile from './Profile';
 import Recipes from './recipes';
 import Notifications from './Notifications';
 import Settings from './Settings';
 import NutritionSection from './NutritionSection';
+import NutritionPlan from './NutritionPlan';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+
 
 
 const Stack = createStackNavigator();
@@ -49,6 +51,7 @@ export default function AppNavigator(){
                 <Stack.Screen name='NutritionSection' component={NutritionSection}/>
                 <Stack.Screen name='Notifications' component={Notifications}/>
                 <Stack.Screen name='Settings' component={Settings}/>
+                <Stack.Screen name='NutritionPlan' component={'NutritionPlan'}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
