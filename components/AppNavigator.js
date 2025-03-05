@@ -20,6 +20,8 @@ import Notifications from './Notifications';
 import Settings from './Settings';
 import NutritionSection from './NutritionSection';
 import NutritionPlan from './NutritionPlan';
+import AddMeal from './AddMeal'
+import ActivityScreen from './ActivityScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -51,7 +53,9 @@ export default function AppNavigator(){
                 <Stack.Screen name='NutritionSection' component={NutritionSection}/>
                 <Stack.Screen name='Notifications' component={Notifications}/>
                 <Stack.Screen name='Settings' component={Settings}/>
-                <Stack.Screen name='NutritionPlan' component={'NutritionPlan'}/>
+                <Stack.Screen name='NutritionPlan' component={NutritionPlan}/>
+                <Stack.Screen name ='AddMeal' component={AddMeal}/>
+                <Stack.Screen name ='ActivityScreen' component={ActivityScreen}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

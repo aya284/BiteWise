@@ -596,7 +596,6 @@ optionTransformationText: {
   borderRadius: pxToDp(20),
   justifyContent: 'center',
   marginVertical: pxToDp(20),
-  marginHorizontal: pxToDp(20),
   width: '95%',
  },
  caloriesText:{
@@ -656,6 +655,16 @@ sportyPear:{
   resizeMode: 'contain',
   marginHorizontal: pxToDp(10),
   
+},
+activityContainer:{
+    backgroundColor: '#FCCF94',
+    borderRadius: pxToDp(20),
+    justifyContent: 'center',
+    marginTop: pxToDp(25),
+    marginBottom: pxToDp(80),
+    width: '95%',
+
+    
 }
 
 

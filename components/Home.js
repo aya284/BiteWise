@@ -72,6 +72,7 @@ achieve your goals?`}/>
     </TouchableOpacity>
     {meals.map ((meals, index) => (
        <TouchableOpacity 
+       onPress={()=>navigation.navigate('AddMeal')}
        key={index}
        style={[styles.homeButton, {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}]}>
               <Text style={styles.buttonHomeText}>{meals}</Text>
@@ -79,12 +80,12 @@ achieve your goals?`}/>
       </TouchableOpacity>
     ))}
   </View>
-  <View style={styles.chartContainer}>
+  <View style={styles.activityContainer}>
     <View style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
         <Image source={require('../assets/Images/SportyPear.png')} style={styles.sportyPear}/>
         <Text style={[styles.caloriesText, {paddingTop: 10}]}>Activities</Text>
     </View>
-    <TouchableOpacity style={[styles.button, {marginVertical: 25}]} >
+    <TouchableOpacity style={[styles.button, {marginVertical: 25}]} onPress={()=> navigation.navigate('ActivityScreen')} >
         <Text style={[styles.buttonHomeText, {color: 'white'}]}>Log Today's Activity</Text>
     </TouchableOpacity>
 
