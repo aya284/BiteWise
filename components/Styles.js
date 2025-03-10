@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { TextInput } from 'react-native-paper';
 
 const { width } = Dimensions.get('window');
 const pxToDp = (px) => px * (width / 390);
@@ -34,7 +35,7 @@ secondaryText:{
   width: '100%',
   color: '#000',
   textAlign: 'center',
-  fontFamily: 'Quicksand_400Regular',
+  fontFamily: 'Quicksand_500Meduim',
   fontSize: pxToDp(18),
   marginBottom: pxToDp(10),
 },
@@ -98,7 +99,7 @@ input:{
   shadowColor: '#000',
   shadowOpacity: 0.2,
   shadowRadius: pxToDp(10),
-  elevation: 10,
+  elevation: 5,
   shadowOffset: { width: 0, height: pxToDp(2) }
 },
 //any primary button
@@ -468,7 +469,7 @@ optionTransformationText: {
     color: '#000000',
     fontFamily: 'Quicksand_600SemiBold',
     fontSize: pxToDp(25),
-    marginVertical: pxToDp(10),
+   
   },
   passwordContainer: {
           flexDirection: 'row',
@@ -483,28 +484,28 @@ optionTransformationText: {
           shadowColor: '#000',
           shadowOpacity: 0.2,
           shadowRadius: pxToDp(10),
-          elevation: 10,
+          elevation: 5,
           shadowOffset: { width: 0, height: pxToDp(2) }
         },
-        passwordInput: {
+passwordInput: {
           flex: 1,
           height: '100%',
           paddingLeft: 15,
           fontSize: 16,
           
         },
-        eyeIcon: {
+eyeIcon: {
           padding: 10,
           marginRight: 10,
         },
-        reset: {
+reset: {
           color: '#4F7B4A', 
           fontFamily: 'Quicksand_700Bold',
           fontSize: pxToDp(15),
           textDecorationLine: 'underline'
   
         },
-        Divider: {
+Divider: {
           width: '80%',
           height: pxToDp(1),
           backgroundColor: '#000',
@@ -529,7 +530,7 @@ optionTransformationText: {
     fontSize: pxToDp(30),
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: pxToDp(45),
+    marginTop: pxToDp(50),
   },
   //main container 
   mainContainer: {
@@ -663,10 +664,81 @@ activityContainer:{
     marginTop: pxToDp(25),
     marginBottom: pxToDp(80),
     width: '95%',
-
-    
-}
-
-
+},
+// activity log screen 
+pickerContainer:{
+  margin: pxToDp(10),
+  backgroundColor: '#FCCF94',
+  borderRadius: pxToDp (20),
+  overflow: 'hidden',
+},
+picker:{
+  color: '#2E4A32',
+},
+inputDuration:{
+    flex: 1,
+    padding: pxToDp(10),
+    borderRightWidth: 1,
+    borderRightColor: '#ccc',
+}, 
+//recipes Screen 
+searchContainer:{
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  paddingHorizontal: pxToDp(13),
+  backgroundColor: '#FCCF94',
+  borderRadius: pxToDp(20),
+  width: '90%',
+  marginVertical: pxToDp(15),
+  marginHorizontal: pxToDp(20),
+  
+  height: pxToDp(40),
+}, 
+//nutritionForm
+TextInput:{
+  color: '#000',
+  fontFamily: 'Quicksand_500Meduim',
+  fontSize: pxToDp(8),
+  paddingVertical: pxToDp(0),
+  borderRadius: 15,
+},
+bioInput:{
+  width: '100%',
+  height: 100,
+  backgroundColor: '#fff',
+  borderRadius: 15,
+  paddingLeft: 15,
+  marginBottom: 15,
+  borderWidth: 1,
+  borderColor: '#ccc',
+  shadowColor: '#000',
+  shadowOpacity: 0.2,
+  shadowRadius: pxToDp(10),
+  elevation: 5,
+  shadowOffset: { width: 0, height: pxToDp(2) }},
+googleButton: {
+    padding: 10,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    elevation: 2, 
+    shadowColor: '#000', 
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+  },
+  fbButton: {
+    backgroundColor: '#4267B2', 
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 5,
+  },
+  signInContainer:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: pxToDp(30),
+   
+  }
 })
 export default styles;

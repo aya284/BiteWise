@@ -9,7 +9,7 @@ export default function Gratitude() {
   return (
     <View style= {styles.container} backgroundColor= '#FCCF94'>
         <View>
-         <TouchableOpacity onPress={() => navigation.goBack() } style={styles.backButton} >
+         <TouchableOpacity onPress={() => navigation.goBack() } style={[styles.backButton, {marginTop: 5}]} >
              <Ionicons name="arrow-back" size={38}/>
          </TouchableOpacity>
         </View>
@@ -20,7 +20,7 @@ export default function Gratitude() {
       <Image source={require('../assets/Images/lock.png')} style= {styles.smallPear}/>
       <View style={styles.buttonContainer}>
             <Button mode= 'contained' style={styles.button} labelStyle={styles.textButton} onPress={() => {
-              navigation.navigate('SignUp'); 
+              navigation.navigate('Home'); 
              } }>Next</Button>
       </View>
     </View>

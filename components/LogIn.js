@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, Image, StyleSheet, Dimensions, TextInput, TouchableOpacity, Pressable, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import {useState} from 'react';
@@ -6,17 +6,49 @@ import { useNavigation } from '@react-navigation/native';
 import { Divider, Button } from 'react-native-paper';
 import * as Google from 'expo-auth-session/providers/google';
 import * as Facebook from 'expo-facebook';
-import * as Apple from 'expo-apple-authentication';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function LogIn() {
-const navigation = useNavigation();    
+const navigation = useNavigation(); 
 const [password, setPassword] = useState ('');
 const [isPasswordVisible, setIsPasswordVisble] = useState (false);
 //google sign in 
-const [request, response, pomptAsync] = Google.useAuthRequest({
-    androidClientId: '',
-    iosClientId: '',
-})
+const [request, response, promptAsync] = Google.useAuthRequest({
+    webClientId: '1017733460133-9vb26o17igm227eko3bur0ub6285bsg3.apps.googleusercontent.com',
+    iosClientId: '1017733460133-v0vo1cluujf0nc6lk5nl20oe8h8m4v86.apps.googleusercontent.com',
+    androidClientId: '1017733460133-epv1rf173vhrnbnluc0sruffedra97bt.apps.googleusercontent.com'
+});
+useEffect(() => {
+  if (response?.type === 'success'){
+    const {authentication} = response;
+    console.log('google Auth Success, token:', authentication.accessToken);
+  }
+}, [response]
+);
+
+//facebook sign in 
+useEffect(() => {
+  // Initialise en utilisant les valeurs de app.json
+  Facebook.initializeAsync().then(() => {
+    console.log('Facebook SDK initialized');
+  });
+}, []);
+
+const handleFacebookLogin = async () => {
+  try {
+    const result = await Facebook.logInWithReadPermissionsAsync({
+      permissions: ['public_profile', 'email'],
+    });
+
+    if (result.type === 'success') {
+      console.log('Facebook token:', result.token);
+    } else {
+      console.log('Facebook login cancelled');
+    }
+  } catch (error) {
+    console.log('Facebook Login Error:', error);
+  }
+};
 return (
     <View style= {styles.container}>
         <Image source={require('../assets/Images/leaf.png')} style= {styles.topLeaf}/>
@@ -38,13 +70,22 @@ return (
         <Pressable onPress={() => navigation.navigate('ResetPassword')}>
             <Text style={styles.reset}>Forgot Password?</Text>
         </Pressable>
+        
         <Divider style={styles.Divider}/>
+        <View style={styles.signInContainer}>
+          <TouchableOpacity style={styles.googleButton} onPress={() => promptAsync()}>
+             <Ionicons name='logo-google' size={34}/>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.fbButton}  onPress={handleFacebookLogin}>
+             <Ionicons name='logo-facebook' size={34}/>
+          </TouchableOpacity>
+        </View>
         <View style={styles.buttonContainer}>
              <Button mode= 'contained' style={styles.button} labelStyle={styles.textButton} onPress={()=> navigation.navigate('Home')}>Log In</Button>
         </View>
         <View style={styles.textContainer}>
             <Text style={styles.accountText}>Don't you have an account?</Text>
-            <Pressable  onPress={()=>{navigation.navigate('NameScreen')}}>
+            <Pressable  onPress={()=>{navigation.navigate('UserType')}}>
                 <Text style={styles.signUpText}>Sign Up</Text>
             </Pressable>
 
@@ -116,7 +157,7 @@ const styles = StyleSheet.create ({
         textAlign: 'center', 
         fontFamily: 'Quicksand_700Bold',
         fontSize: pxToDp(40),
-        marginVertical: pxToDp(30),
+        marginVertical: pxToDp(15),
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -162,27 +203,25 @@ const styles = StyleSheet.create ({
         padding: 10,
         marginRight: 10,
       },
-      reset: {
-        color: '#4F7B4A', 
-        fontFamily: 'Quicksand_700Bold',
-        fontSize: pxToDp(15),
-        textDecorationLine: 'underline'
-
-      },
-      Divider: {
-        width: '80%',
-        height: pxToDp(1),
-        backgroundColor: '#000',
-        alignSelf: 'center',
-        marginVertical: pxToDp(20)
-      },
-      buttonContainer:{
-        width: '100%',
-        alignItems: 'center',
-        marginTop: pxToDp(30), 
-        paddingBottom: pxToDp(20)
+reset: {
+  color: '#4F7B4A', 
+  fontFamily: 'Quicksand_700Bold',
+  fontSize: pxToDp(15),
+  textDecorationLine: 'underline',
+  marginVertical: pxToDp(10),},
+Divider: {
+  width: '80%',
+  height: pxToDp(1),
+   backgroundColor: '#000',
+  alignSelf: 'center',
+  marginVertical: pxToDp(10) },
+buttonContainer:{
+  width: '100%',
+  alignItems: 'center',
+  marginTop: pxToDp(30), 
+  paddingBottom: pxToDp(20)
     },
-      button: {
+button: {
         width: pxToDp(280),
         height: pxToDp(60),
         borderRadius: pxToDp(20),
@@ -197,12 +236,12 @@ const styles = StyleSheet.create ({
         shadowOffset: { width: 0, height: pxToDp(2) },
         overflow: 'hidden'
     },
-    textButton: {
+textButton: {
         color: 'white',
         fontFamily: 'Quicksand_700Bold',
         fontSize: 21
         },
-    textContainer:{
+textContainer:{
         textAlign: 'center',
         alignItems: 'center',
         justifyContent: 'center',
@@ -221,5 +260,12 @@ const styles = StyleSheet.create ({
         fontFamily: 'Quicksand_400Regular',
         color: '#4F7B4A',
         fontSize: pxToDp(15)
+    }, 
+    signInContainer:{
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: pxToDp(30)
+      
     }
 })

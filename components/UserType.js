@@ -11,7 +11,7 @@ const [userType, setUserType] = useState ('');
 const handleText = () =>{
   console.log('User Type:', userType); 
     if (userType === 'Personal'){
-       navigation.navigate('NameScreen', {userType: userType});}
+       navigation.navigate('SignUp', {userType: userType});}
     
     else if (userType === 'Professional'){
         navigation.navigate('NameScreen', {userType: userType});}

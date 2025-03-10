@@ -1,5 +1,6 @@
 {
   "expo": {
+    "facebookAppId": "1736013053925318",
     "name": "MyApp",
     "slug": "MyApp",
     "version": "1.0.0",
@@ -13,9 +14,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
+      "ios.bundleIdentifier":"com.ayafd.myapp",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.ayafd.myapp",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
